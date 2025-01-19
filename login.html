@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login</title>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1; width: 300px; margin: auto;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4F4F4F;
+  color: white;
+  padding: 10px 14px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.registerbtn {
+  width: auto;
+  padding: 8px 14px;
+  background-color: #4F4F4F;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 16px 0 12px 0;
+}
+
+img.avatar {
+  width: 30%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 12px;
+  background-color: #fff; /* Màu nền trắng để nổi bật hơn */
+ 
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.2),  /* Bóng đổ chính */
+    0 6px 6px rgba(0, 0, 0, 0.15);   /* Bóng đổ phụ để tăng chiều sâu */
+}
+
+span.psw {
+  float: right;
+  padding-top: 12px;
+}
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+<h2 style="text-align:center;">Login</h2>
+<form action="/action_page.php" method="post">
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" value="đây_là_tài_khoản_mặc_định" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" value="123" required>
+        
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="registerbtn">Register</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+
+<script>
+ function validateLogin() {
+    // Tài khoản và mật khẩu đúng
+    var correctUsername = "đây_là_tài_khoản_mặc_định";
+    var correctPassword = "123";
+
+    // Lấy giá trị từ form
+    var enteredUsername = document.getElementsByName("uname")[0].value;
+    var enteredPassword = document.getElementsByName("psw")[0].value;
+
+    // Kiểm tra thông tin đăng nhập
+    if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+      // Nếu đúng, chuyển hướng đến index.html
+      window.location.href = "index.html";
+      return false; // Ngăn chặn việc gửi form
+    } else {
+      alert("Tên đăng nhập hoặc mật khẩu không đúng!");
+      return false; // Ngăn chặn việc gửi form
+    }
+  }
+</script>
+</body>
+</html>
